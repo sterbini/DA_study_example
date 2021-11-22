@@ -39,7 +39,7 @@ if root.has_been('completed'):
         #os.sytem(f'bsub cd {node.path} &&  {node.path_template} ')
         #my_list.append(pd.read_parquet(f'{node.path}/test.parquet', columns=['x']).iloc[-1].x)
             with open(f'{my_study}/{node_child.path}/config.yaml','r') as fid:
-                 config=yaml.load(fid) 
+                 config=yaml.save_load(fid) 
             particle=pd.read_parquet(config['particle_file'][7:])
             df=pd.read_parquet(f'{my_study}/{node_child.path}/output_particles.parquet')
             df['path 1']= f'{node.path}' 
